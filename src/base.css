@@ -1,6 +1,13 @@
 /* Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+:root {
+  --primary-color: #b67cff;
+  --secondary-color: #f7f7f7;
+  --white-color: #fff;
+  --black-color: #181818;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +17,8 @@
 
 body {
   /* height: 100vh; */
-  background-color: #f5f5f5;
-  color: #181818;
+  background-color: var(--primary-color);
+  color: var(--black-color);
 }
 
 ul {
