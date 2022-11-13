@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/InputTodos.css";
-import { SiAddthis } from "react-icons/si";
+// import { SiAddthis } from "react-icons/si";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../features/todosSlice";
 

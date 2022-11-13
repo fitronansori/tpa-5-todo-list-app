@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/App.css";
-// import ActionStatus from "./components/ActionStatus";
+import ActionStatus from "./components/ActionStatus";
 import InputTodos from "./components/InputTodos";
 import ListTodo from "./components/ListTodo";
 
@@ -13,9 +13,9 @@ const App = () => {
           <InputTodos />
         </div>
         <div className="bottom">
-          {/* <div>
-        <ActionStatus />
-      </div> */}
+          <div>
+            <ActionStatus />
+          </div>
           <ListTodo />
         </div>
       </div>

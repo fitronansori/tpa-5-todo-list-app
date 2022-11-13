@@ -1,40 +1,49 @@
 import React from "react";
-// import { useDispatch } from "react-redux";
-// import {
-//   statusAll,
-//   statusActive,
-//   statusCompleted,
-// } from "../features/todosSlice";
+import "../styles/ActionStatus.css";
+// import ListTodo from "./ListTodo";
+import { useDispatch, useSelector } from "react-redux";
+import { filterTodo } from "../features/todosSlice";
 
 const ActionStatus = () => {
-  // const dispatch = useDispatch();
+  const todo = useSelector((state) => state.todos.todos);
+  // const filterStatus = useSelector((state) => state.todos.filterStatus);
 
-  // const handleAll = () => {
-  //   dispatch(statusAll());
-  // };
+  // const sortTodoList = [...todo];
+  // sortTodoList.sort((a, b) => a - b);
 
-  // const handleActive = () => {
-  //   dispatch(statusActive());
-  // };
+  const dispatch = useDispatch();
 
-  // const handleCompleted = () => {
-  //   dispatch(statusCompleted());
-  // };
+  // const filteredTodoList = sortTodoList.filter((item) => {
+  //   if (filterStatus === "all") {
+  //     return true;
+  //   }
+  //   return item.status === filterStatus;
+  // });
+
+  const handleAll = () => {
+    dispatch(filterTodo("all"));
+  };
+
+  const handleUncompleted = () => {
+    dispatch(filterTodo("uncompleted"));
+  };
+
+  const handleCompleted = () => {
+    dispatch(filterTodo("completed"));
+  };
 
   return (
-    <>
-      {/* <div className="action-btn">
-        <button className="all-btn" onClick={handleAll}>
-          All
-        </button>
-        <button className="active-btn" onClick={handleActive}>
-          Active
-        </button>
-        <button className="completed-btn" onClick={handleCompleted}>
-          Completed
-        </button>
-      </div> */}
-    </>
+    <div className="action-btn">
+      <button className="btn" onClick={handleAll}>
+        All
+      </button>
+      <button className="btn" onClick={handleUncompleted}>
+        Active
+      </button>
+      <button className="btn" onClick={handleCompleted}>
+        Completed
+      </button>
+    </div>
   );
 };
 
